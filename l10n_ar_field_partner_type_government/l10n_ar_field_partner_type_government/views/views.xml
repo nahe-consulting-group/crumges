@@ -1,0 +1,15 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="l10n_ar_field_partner_type_government.form_inherit">
+      <field name="name">l10n_ar_field_partner_type_government_form</field>
+        <field name="model">res.partner</field>
+          <field name="inherit_id" ref="base.view_partner_form"/>
+          <field name="arch" type="xml">
+            <field name="company_type" position="after">
+                <field name="company_type_subtype" attrs="{'invisible': [('company_type','=', 'person')]}" />
+            </field>
+          </field>
+    </record>
+
+  </data>
+</odoo>

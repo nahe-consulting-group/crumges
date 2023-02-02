@@ -1,0 +1,26 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="partner_company_name_fantasy.form_inherit">
+      <field name="name">partner_company_name_fantasy_form</field>
+        <field name="model">res.partner</field>
+          <field name="inherit_id" ref="base.view_partner_form"/>
+          <field name="arch" type="xml">
+            <h1 position="after">
+                <field name="ref"/>
+            </h1>
+          </field>
+    </record>
+    
+    <record model="ir.ui.view" id="partner_company_name_fantasy.kanban_inherit">
+      <field name="name">partner_company_name_fantasy_kanban</field>
+        <field name="model">res.partner</field>
+          <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+          <field name="arch" type="xml">
+            <li t-if="record.email.raw_value" position="before">
+                <li t-if="record.ref.raw_value" class="o_text_overflow"><field name="ref"/></li>
+            </li>
+          </field>
+    </record>
+
+  </data>
+</odoo>

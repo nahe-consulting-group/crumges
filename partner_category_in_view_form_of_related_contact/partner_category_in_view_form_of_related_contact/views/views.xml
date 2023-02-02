@@ -1,0 +1,21 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="partner_category_in_view_form_of_related_contact_list">
+      <field name="name">partner_category_in_view_form_of_related_contact_list</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//kanban/field[@name='state_id']" position= "after">
+                <field name="category_id"/>
+        </xpath>
+        <xpath expr="//kanban//field[@name='country_id']" position= "after">
+            <field name="category_id" options="{'color_field': 'color', 'no_create_edit': True}"/>
+        </xpath>
+        <xpath expr="//form//field[@name='company_id']" position= "after">
+            <field name="category_id" options="{'color_field': 'color', 'no_create_edit': True}"/>
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+</odoo>
